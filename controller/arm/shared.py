@@ -227,6 +227,12 @@ def set_motion_paused(paused: bool):
 # MARK - Helpers
 
 
+def wait_for_motion_allowed():
+    from core.health import raise_if_cancelled
+
+    raise_if_cancelled()
+
+
 def reset():
     settings.clear_errors()
     settings.enable_drag_mode()
